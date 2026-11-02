@@ -1,5 +1,5 @@
 
-let students = [];
+let students = JSON.parse(localStorage.getItem("students")) || [];
 
 const studentForm = document.getElementById("studentForm");
 const studentList = document.getElementById("studentList");
@@ -21,6 +21,9 @@ studentForm.addEventListener("submit", function (e) {
     };
 
     students.push(student);
+    localStorage.setItem("students", JSON.stringify(students));
+
+
 
     displayStudents();
 
