@@ -79,6 +79,9 @@ searchInput.addEventListener("input", function () {
     });
 
     displayStudents(filteredStudents);
+    if (filteredStudents.length === 0) {
+    studentList.innerHTML = "<p>No students found!</p>";
+}
 });
 
 // Edit Student
